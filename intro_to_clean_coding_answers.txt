@@ -1,0 +1,5 @@
+Intro to clean coding answers
+
+1. In your own words, explain what clean code is and why it is important.
+
+A:
