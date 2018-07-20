@@ -2,4 +2,112 @@ Intro to clean coding answers
 
 1. In your own words, explain what clean code is and why it is important.
 
-A:
+> Answer: Clean code, means it's scannable and easy to read by other developers, not just the person who wrote the original code.
+
+2. Read this article about Toyota and their use of bad code. Although you may not yet understand all of the topics discussed, think about another commonly used object that relies on computers and explain what would happen if the code was not created to an acceptable standard.
+
+> Answer: So many items these days are connected to a computer, it's hard to pick just one - but one thing that comes to mind is traffic lights. Traffic lights are sometimes controlled by computers, and use the language C. If traffic lights were to breakdown, not only would safety be a concern, but a delay in traffic would be a significant economic loss to a major city.
+
+3. Would you consider the following to be clean code? Explain why or why not. If not, refactor the code.
+
+  FUNCTION do(x, y)               // Creating a new function
+   IF y = "F" THEN               // Check if y is equal "F"
+   SET z to (x−32) * (5/9)       // Formula to convert degrees fahrenheit to celsius
+   PRINT z                       // Print result
+   ELSE IF y = "C" THEN          // If y not equal to "F", check if equal to "C"
+   SET z to x * 1.8000 + 32.00   // Formula to convert degrees celsius to fahrenheit
+   PRINT z                       // Print result
+   END IF
+  END FUNCTION
+
+> Answer: No, I would not consider the code to be clean as there are a lot of comments, indentation isn't used, it doesn't pass the squint test and the functions and variables are descriptive. It should be re-written like so:
+extracted and grouped into multiple functions like so:
+
+4. Would you consider the following to be clean code? Explain why or why not. If not, refactor the code.
+
+  FUNCTION calcPercent(sum, total)
+   IF NOT(total = 0) THEN
+       SET percentage to sum / total * 100
+   ELSE
+     PRINT "Sorry, cannot divide by 0"
+   END IF
+
+   PRINT percentage
+  END FUNCTION
+
+> Answer: Yes, this code is cleaner, especially when you compare it to the example in number 3. It's clean because the function names and variables are descriptive, the proper use of indentation, and there isn't any comments.
+
+5. Using pseudocode, refactor the code for the following examples using the principles you have learned in this checkpoint.
+
+a. The following function prints the subtotal of a customer's transaction and receives payment accordingly.
+
+> Answer: Created a new function for the total and renamed the functions
+
+  FUNCTION totalDue
+    SET totalDue to subTotal * discountRate + (subTotal * tax)
+    Return totalDue
+  END FUNCTION
+
+    PRINT "Your total due is: " + subTotal * discountRate + (subTotal * tax)
+
+  Function isPaymentCashCredit
+     IF paymentType = 'CASH' THEN
+         CALL getPayment RETURNING amount
+         PRINT "Change due: " + amount - totalDue
+     ELSE IF paymentType = 'CREDIT CARD' THEN
+         CALL getPayment RETURNING amount
+         PRINT "Your credit card has been charged: " + totalDue
+     END IF
+  END FUNCTION
+
+b. The following function checks out a book if there are no issues with the guest's account.
+
+> Answer: Too many nested if statements, was able to combine it to one line.
+
+  FUNCTION checkoutBook(book, guest)
+    IF (guest.accountActive) OR NOT(guest.hasOverdueBooks) OR (guest.outstandingFees = 0)
+      APPEND book to guest.books
+      SET book.status to "Checked Out"
+      PRINT "Your books have been issued."
+    ELSE
+     PRINT "Unable to check out book."
+    END IF
+  END FUNCTION
+
+c. The following class is a code snippet that should support the transactions a customer can perform at an ATM.
+
+  CLASS BankAccount
+
+   FUNCTION displayBalance
+      PRINT balance
+   END FUNCTION
+
+   FUNCTION deposit(amount)
+      SET balance to balance + amount
+   END FUNCTION
+
+   FUNCTION withdraw(amount)
+       IF balance > amount THEN
+         SET balance to balance - amount
+       END
+   END FUNCTION
+
+   FUNCTION creditCardOffer
+       IF NOT(customer.hasCreditCard) THEN
+           CALL offerCreditCard
+       END
+   END FUNCTION
+
+   FUNCTION checkStatus
+       IF NOT(customer.hasCheckingAccount) THEN
+           CALL offerCheckingAccount
+       END
+   END FUNCTION
+
+   ....
+   ....
+   ....
+
+  END
+
+> Answer:
