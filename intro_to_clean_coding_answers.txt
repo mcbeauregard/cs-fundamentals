@@ -76,7 +76,9 @@ b. The following function checks out a book if there are no issues with the gues
 
 c. The following class is a code snippet that should support the transactions a customer can perform at an ATM.
 
-  CLASS BankAccount
+> Answer:
+
+  CLASS customerBankAccount
 
    FUNCTION displayBalance
       PRINT balance
@@ -92,6 +94,7 @@ c. The following class is a code snippet that should support the transactions a 
        END
    END FUNCTION
 
+CLASS promotionOffer
    FUNCTION creditCardOffer
        IF NOT(customer.hasCreditCard) THEN
            CALL offerCreditCard
@@ -104,10 +107,33 @@ c. The following class is a code snippet that should support the transactions a 
        END
    END FUNCTION
 
-   ....
-   ....
-   ....
+Programming Questions
 
-  END
+6. Square Given an array of integers, find out whether the sum of the integers is a perfect square. If it is a perfect square, return the square root, otherwise return the sum.
 
 > Answer:
+
+function isSumOrSquare(array) {
+  	var sumTotal = array.reduce((total, amount) => total + amount);
+  	var squareRoot = Math.sqrt(sumTotal);
+	return (squareRoot % 1 === 0 ? 'The sqrt is: ' + squareRoot : 'The sum is: ' + sumTotal);
+}
+isSumOrSquare([0,1,2,3,4,5,6,7]);
+
+7. Duplicate Given an array of integers, find out whether the array contains any duplicate elements. The function should return true if any value appears at least twice in the array, and false if every element is distinct.
+
+> Answer:
+function isCharDuplicates(string){
+  var duplicates = {};
+    for (var i = 0 ; i <= string.length ; i++){
+      if (duplicates[string[i]] === undefined){
+        duplicates[string[i]] = 1;
+      } else {
+        return true;
+      }
+    }
+    return false ;
+}
+
+console.log(isCharDuplicates("abbabcbdbabdbdbabababcbcbab"));
+console.log(isCharDuplicates("abc"));
