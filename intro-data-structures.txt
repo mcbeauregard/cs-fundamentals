@@ -1,0 +1,18 @@
+1. A line of people at an amusement park ride.
+
+> Answer:
+
+
+2. Provide another real-world example that you can model using a data structure.
+
+> Answer:
+
+In some countries, there are grocery store parking lots that hang lights over every parking stall. The light will show green if it's the parking space is available, or red if a car is parked there and unavailable.
+
+This parking stall lighting system is wicked because when you're driving-in you can quickly see what stalls are free all the way across the lot, which takes the guessing work out - no more wondering if the stall is free or not, and inching closer, only to find out the spot's taken by a mini.
+
+So the data would be sorted by stall available versus unavailable in real-time. There are a fixed number of stalls, but you never know which spot (aka index  of the array) will be taken at any time.
+
+3. How would your data structure allow developers to access and manipulate the data?
+
+> Answer: It would allow developers to access the data by sorting the stalls available versus unavailable, as well as searching. After that, developers could then manipulate data by adding or subtracting new objects and matching them with an array index. You could also edit the array data by creating or removing new items or even different array groups. For example removing stalls available, and adding parking stalls for handicap or pregnant women.

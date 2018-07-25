@@ -1,0 +1,42 @@
+Exercises
+
+1. What is a hash table?
+> Answer:
+A hash table is a type of data structure that stores values, linking each one to unique key, which then forms a key-value pair, similar to the firebase database we created back in Module 2. You can look up data via the unique key, then returning the value. Each hash table can store the key-values in an array. You should use a hash table when your data contains a variable number of consistently formatted values.
+
+2. What is hashing?
+> Answer:
+Hashing handles the conversion in a hash table. It does this by converting data to a numerical index. Then the hashing function is used to assign the unique hash code to a fixed length. Once this is done, the hash table can match the key-value to it's internal array.
+
+3. How does a hash table store data?
+> Answer:
+You use hash tables to store similar groups of data by "some form of identifier," such as an ID number.
+
+4. How are hash tables and objects different?
+> Answer:
+Hash tables group similar type of data, where as objects can hold varying types of data together. This is important to note, since developers will need to decide which one is the best one for them to use based on their data.
+
+5. Determine whether you would use a hash table or an object to store each of the following pieces of data:
+- A list of pets and their unique names.
+> Answer: hash table - similar data
+
+- The name, age, and the birthday of your best friend.
+> Answer: object - varying data
+
+- The name and location of every company in a given city.
+> Answer: hash table - similar data
+
+- All of the books checked out from a library by a particular individual.
+> Answer: object - varying data
+
+- The primary and secondary phone numbers for a contact.
+> Answer: object - varying data
+
+6. Build a system that allows a sales associate to enter a customer's name, address, and phone number into the system and look up customers using their phone numbers. Store this information in a hash table.
+> Answer: **
+
+7. Build a system that allows a store owner to track their store's inventory using a hash table for storage.
+> Answer: **
+
+8. Build a system that allows digital copies of newspapers to be entered and searched by publisher and publication date. Use hash tables to store the necessary data.
+> Answer: **
