@@ -25,47 +25,44 @@ END FUNCTION
 
 2. Create a function that prints out the numbers from 1 to 100.
 
-> Answer: **CHECK**
+> Answer:
 
 FUNCTION printOutNumbers
-  SET total to 1
-  WHILE the number is less than or equal to 100
-    PRINT number
+  SET total index to 1
+    PRINT index and go to new line
     INCREMENT number
-  ENDWHILE
-RETURN total
 END FUNCTION
 
 3. Create a function that searches for a specific entry in a phonebook.
 
 > Answer:
 
-FUNCTION searchPhonebook
-  INPUT searchValue
-  CALL the phonebook and match searchValue with phonebookEntry and store the result in answer
-  RETURN answer
+FUNCTION find
+  INIT total to 0
+  INPUT contacts
+  WHILE the contacts is not 0
+    INPUT a name
+    RETURN entry
+  END WHILE
 END FUNCTION
 
-//
 4. Using the pseudocode you wrote for the previous question, implement it in any computer language of your choice.
 
-> Answer: **NOT COMPLETE **
+> Answer:
 
-var phonebookEntry= {
-          {firstName: Adam, number: 604-912-4444},
-          {firstName: Amy, number: 604-777-2222},
-          {firstName: Joe, number: 604-123-4567},
-          {firstName: Mandy, number: 604-123-0000},
-          {firstName: Pierce, number: 604-546-1234}
-                    };
+var contacts = [
+          {firstName: "Adam", number: "604-912-4444"},
+          {firstName: "Amy", number: "604-777-2222"},
+          {firstName: "Joe", number: "604-123-4567"},
+          {firstName: "Mandy", number: "604-123-0000"},
+          {firstName: "Pierce", number: "604-546-1234"}];
 
-FUNCTION lookupPhonenumber(name, number) {
-  var searchValue = name and number;
-  return searchValue
-}
+function find(firstName) {
+  for(i = 0; i <= contacts.length; i++) {
+    if (firstName === contacts[i].firstName) {
+      return contacts[i];
+      }
+    }
+  };
 
-lookupPhonenumber(Pierce, 604-546-1234);
-
-/// example
-
-      
+console.log(find("Adam"));
