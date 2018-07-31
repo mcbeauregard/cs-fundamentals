@@ -1,0 +1,49 @@
+Exercises
+
+1. What are some pros and cons of using linked lists instead of arrays?
+> Answer:
+ Pros of using linked lists:
+ - Arrays are limited by memory, especially when using exceptionally large arrays, making arrays an expensive operation in comparison to linked lists.
+ - Arrays can cause the operation system to stop when memory is used up unnecessarily by a large array.
+ - Linked lists can grow larger than arrays due to memory available.
+ - With linked lists there are never empty placeholders because of nodes.
+
+ Cons of using linked lists:
+ - Linked lists are unpredictable because of it's memory address, which are not stored next to each other in memory, instead it's stored in a series of nodes, which contain the data/address, compared to arrays that are predictable.
+ - Indexing is not possible in linked lists, instead you have to search for an element from the beginning of an element, compared to arrays where indexing is available.
+ - It can be difficult to access linked listed because of nodes can exists anywhere making them tricky to find.
+ - You have to access the first node in order (the head), compared to arrays, which are more accessible because you can any index right away.
+
+2. Come up with a real world example of a linked list.
+> Answer:
+The first thing that comes to mind is a shuffled playlist from Google Play Music - set to be shuffled. Like a linked list, the order that a song plays is random and unpredictable.
+
+Programming Questions
+
+Before beginning to code, write out a plan explaining how to solve the question.
+
+1. The Linked List push function should take a value, create a node, and add it to the end of a list. Below is a push function for a singly linked list. However, there is something wrong with it. Find the bug and fix the code.
+
+  LinkedList.prototype.push = function(element) {
+   SET node = {
+     value: element,
+     next: null
+   }
+
+   IF the head node does not exist
+     THEN SET head to node
+   ELSE
+     SET current node to head
+     SET current.next to node
+   }
+  }
+
+2. Given an unsorted singly linked list, remove all duplicates from the linked list.
+  Example
+  Input: a -> c -> d -> d -> a
+  Output: a -> c -> d
+
+3. Given an unsorted singly linked list, reverse it.
+Example
+  Input: a -> b -> c -> d
+  Output: d -> c -> b -> a

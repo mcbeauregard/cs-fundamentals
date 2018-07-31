@@ -52,11 +52,11 @@ END FUNCTION
 > Answer: **NOT COMPLETE **
 
 var phonebookEntry= {
-          {name: Adam, number: 604-912-4444},
-          {name: Amy, number: 604-777-2222},
-          {name: Joe, number: 604-123-4567},
-          {name: Mandy, number: 604-123-0000},
-          {name: Pierce, number: 604-546-1234}
+          {firstName: Adam, number: 604-912-4444},
+          {firstName: Amy, number: 604-777-2222},
+          {firstName: Joe, number: 604-123-4567},
+          {firstName: Mandy, number: 604-123-0000},
+          {firstName: Pierce, number: 604-546-1234}
                     };
 
 FUNCTION lookupPhonenumber(name, number) {
@@ -64,4 +64,8 @@ FUNCTION lookupPhonenumber(name, number) {
   return searchValue
 }
 
-lookupPhonenumber(Pierce, 6045461234);
+lookupPhonenumber(Pierce, 604-546-1234);
+
+/// example
+
+      

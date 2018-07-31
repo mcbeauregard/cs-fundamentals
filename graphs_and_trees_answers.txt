@@ -1,0 +1,30 @@
+1.  What is a binary tree and what makes it unique to other trees?
+> Answer:
+A binary tree, is a database structure made up of nodes that is split in two childs  - right and left.
+What makes it unique is it's child nodes. If it happens to not have a child node, it's called a lead node.
+
+2.  What is a heuristic?
+> Answer:
+
+A Heuristic is a guess that software engineers and there algorithm's make when face with a complex problem, for example calculating the shortest patch to travel to destination via Google maps.
+
+3.  What is another problem besides the shortest-path problem that requires the use of heuristics?
+> Answer:
+A graph problem also requires the use of heuristics because it solves the the problem by finding just one solution.
+
+4.  What is the difference between a depth-first search and a breadth-first search?
+> Answer:
+A depth-first search, moves along a tree or graph data structure searching as far possible before backtracking and searching another root, where as a breadth-first search looks at the nodes first starting at the first level, then moving to the next level of neighbor nodes.
+
+5.  Explain in your own words what an undirected, a-cyclic, unweighted graph is.
+> Answer:
+To me it's like a free-for-all type of graph, and reminds of a round-about road and here's why:
+- A round-about road goes out in many directions, so it's undirected.
+- I've personally never seen a speed limit in a round-about, so there is no cost of time, so you would call that unweighted.
+- You typically exit a round-about before you've looped it, so to me it's acyclic.
+
+So to me an undirected, a-cyclic, unweighted graph is just like a round-about road.
+
+6.  What kind of graph is a binary search tree?
+> Answer:
+A binary tree contains nodes that point to a left and right child, and a binary search tree puts an order to each of these node based on a quantifiable value. When searching along the tree, nodes on the right are more value than the ones on the right. 
