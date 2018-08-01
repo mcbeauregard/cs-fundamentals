@@ -2,6 +2,40 @@
 
 > Answer:
 
+a) Use an array input: ["Vivian", "Ava", "Josh", "Patrick", "Mike"]
+var riders = ["Vivian", "Ava", "Josh", "Patrick", "Mike"];
+
+b) Insert a new person, "Mary" at the end of the line. In other words, you should insert Mary after Mike.
+riders.push("Mary");
+console.log(riders);
+
+c) Find a person in line named "Josh." This function should return the position of 2 in the array, (recall that arrays are 0-based).
+console.log(riders.indexOf("Josh")); // expected output: 2
+
+d) Find a person in line named "Emily." What should your function return if it does not find the item in the array?
+function findRider(rider){
+  if (riders.indexOf(rider) === -1) {
+    return "Could not find rider in line";
+  } else {
+    return riders.indexOf(rider);
+  }
+}
+
+findRider("Emily");
+
+e) What if Ava wants to allow a friend, "Melissa", to cut in line in front of her? How would you code this so Melissa appears before Ava?
+
+var riders = ["Vivian", "Ava", "Josh", "Patrick", "Mike"];
+riders.splice(1, 0, "Melissa");
+
+console.log(riders); // expected output: ["Vivian", "Melissa", "Ava", "Josh", "Patrick", "Mike"]
+
+f) If Patrick wants to leave the line, how would you delete him from the array?
+
+var riders = ["Vivian", "Ava", "Josh", "Patrick", "Mike"];
+var removed = riders.splice(3, 1);
+
+console.log(riders); // expected output: ["Vivian", "Melissa", "Ava", "Josh", "Mike"]
 
 2. Provide another real-world example that you can model using a data structure.
 
