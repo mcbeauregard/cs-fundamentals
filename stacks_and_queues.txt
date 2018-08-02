@@ -11,7 +11,7 @@ The main difference is how they arrange their data structures. Stack arranges da
 3. Imagine you are an engineer tasked with implementing the UNDO and REDO options in a word processor such as Microsoft Word. Which data structure would you use for each option and why?
 > Answer:
 - For the UNDO option I would use a FIFO data structure, so I would use Queue because the UNDO option is taking your most recent action and repeating it, so you want it to undo your first action.
-- For the REDO option I would use a LIFO data structure, using Stack because the REDO option takes your last action puts it in a queue to be called, which is always before the next queued item. 
+- For the REDO option I would use a LIFO data structure, using Stack because the REDO option takes your last action puts it in a queue to be called, which is always before the next queued item.
 
 Programming Questions
 You may program the following question in any language of your choice. Before you begin coding, write out a plan as to how you will solve the question.
@@ -19,28 +19,50 @@ You may program the following question in any language of your choice. Before yo
 1. Given a string, reverse it using a stack. For example, the string "Bloc!" should be converted to "!colB".
 > Answer:
 
+function reverse(string) {
+    var stack = [];
+
+    for (var i = 0; i < string.length; i++) { // push letter into stack
+        stack.push(string[i]);
+    }
+
+    var reverseString = ''; // pop letter from the stack
+    while (stack.length > 0) {
+        reverseString += stack.pop();
+    }
+  return reverseString;
+}
+console.log(reverse('Bloc!')); // expected output: !colB
+
+
 2. Implement the delete functionality of a stack using one queue. Make a FIFO data structure mirror the functionality of a LIFO data structure.
 
   To delete an item, take all of the elements in the queue one at a time and put them at the end of the queue, except for the last one which should be deleted and returned.
 
-  CLASS Stack
-   FUNCTION pop(queue)
-     ...fill in pseudocode here
-   END FUNCTION
-  END CLASS
-
 > Answer:
+
+CLASS Stack
+ FUNCTION pop(queue)
+    SET queue to store data
+    PUSH element to the back of the queue
+    SHIFT element from front of queue
+    RETURN last
+ END FUNCTION
+END CLASS
+
 
 3. Fill in the methods for the following Queue class so that it will work as expected (FIFO).
 
-  CLASS QUEUE
-   FUNCTION enqueue(element)
-     ...fill in pseudocode here
-   END FUNCTION
-
-   FUNCTION dequeue
-     ...fill in pseudocode here
-   END FUNCTION
-  END CLASS
-
 > Answer:
+
+CLASS QUEUE
+ FUNCTION enqueue(element)
+  APPEND element to the end of the list
+ END FUNCTION
+
+FUNCTION dequeue
+  SET temp to the first element
+  REMOVE FIRST element of list from list
+  RETURN temp
+ END FUNCTION
+END CLASS
