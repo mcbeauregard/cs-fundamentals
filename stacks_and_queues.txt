@@ -40,6 +40,7 @@ console.log(reverse('Bloc!')); // expected output: !colB
   To delete an item, take all of the elements in the queue one at a time and put them at the end of the queue, except for the last one which should be deleted and returned.
 
 > Answer:
+
 CLASS Stack
  FUNCTION pop(queue)
    SET the variable equal to the array's index of zero (items[0])
