@@ -43,13 +43,12 @@ console.log(reverse('Bloc!')); // expected output: !colB
 
 CLASS Stack
  FUNCTION pop(queue)
-    SET queue to store data
+    SET queue to store data to temp
     PUSH element to the back of the queue
-    SHIFT element from front of queue
-    RETURN last
+    SHIFT element from front of queue by 1
+    RETURN temp
  END FUNCTION
 END CLASS
-
 
 3. Fill in the methods for the following Queue class so that it will work as expected (FIFO).
 
