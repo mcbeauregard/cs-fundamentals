@@ -41,14 +41,21 @@ console.log(reverse('Bloc!')); // expected output: !colB
 
 > Answer:
 
-CLASS Stack
- FUNCTION pop(queue)
-   SET the variable equal to the array's index of zero (items[0])
-   LOOP through the array, subtracting the last item in the array by an index of one (tail-1)
-   INCREMENT array item by one
-   DECREMENT end of array (tail --)
-   RETURN array
- END FUNCTION
+CLASS QUEUE
+FUNCTION dequeue
+  SET temp to the first element
+  REMOVE FIRST element of list from list
+  RETURN temp
+END FUNCTION
+
+FUNCTION enqueue(element)
+  APPEND element to the end of the list
+END FUNCTION
+
+FOR each item in element
+	DELETE item from last position in element
+END FOR
+RETURN element
 END CLASS
 
 3. Fill in the methods for the following Queue class so that it will work as expected (FIFO).
