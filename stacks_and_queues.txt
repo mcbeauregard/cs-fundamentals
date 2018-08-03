@@ -54,13 +54,20 @@ CLASS Stack
  END FUNCTION
 END CLASS
 
-var itemToReturn = items[0]     // Set item to be first element
 
-for (var i=0 ; i<tail-1; i++)   // if item is removed from tail, push item to stack
-     items[i]= items[i+1]       // increment item by one
-     tail --                    // decrement item from element by one
-return itemToReturn;            // return item
+class Stack {
+  constructor(){
+    function(queue){
 
+    var itemToReturn = items[0]     // Set item to be first element
+
+    for (var i=0 ; i<tail-1; i++)  // if item is removed from tail, push item to stack
+         items[i]= items[i+1]       // increment item by one
+         tail --                    // decrement item from element by one
+    return itemToReturn;            // return item
+    }
+  }
+  
 3. Fill in the methods for the following Queue class so that it will work as expected (FIFO).
 
 > Answer:
