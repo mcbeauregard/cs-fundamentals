@@ -39,23 +39,17 @@ console.log(reverse('Bloc!')); // expected output: !colB
 
   To delete an item, take all of the elements in the queue one at a time and put them at the end of the queue, except for the last one which should be deleted and returned.
 
+  `dequeue` to "take all of the elements in the queue one at a time" and `enqueue` to "put them at the end of the queue, except for the last one which should be deleted and returned."
+
 > Answer:
-
-CLASS QUEUE
-FUNCTION dequeue
-  SET temp to the first element
-  REMOVE FIRST element of list from list
-  RETURN temp
-END FUNCTION
-
-FUNCTION enqueue(element)
-  APPEND element to the end of the list
-END FUNCTION
-
-FOR each item in element
-	DELETE item from last position in element
-END FOR
-RETURN element
+CLASS Stack
+ FUNCTION pop(queue)
+   SET temp to the first element
+   SET FIRST element of list from list
+   LOOP through the array and SET element to the end of the list
+   DECREMENT end of element
+   RETURN temp
+ END FUNCTION
 END CLASS
 
 3. Fill in the methods for the following Queue class so that it will work as expected (FIFO).
