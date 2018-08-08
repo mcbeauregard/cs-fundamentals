@@ -5,13 +5,13 @@ Exercises
 The main difference is how they arrange their data structures. Stack arranges data in a LIFO (last-in-first-out) priority. Whereas Queue, arranges data in a FIFO (first-in-first-out priority). Stack also uses a push and pop method, for it's data, which is not used in a Queue as it's a "commonplace data structure."
 
 2. What are the similarities between stacks and queues?
-> Answer: **
+> Answer:
  Both stacks and queues prioritize entries.
 
 3. Imagine you are an engineer tasked with implementing the UNDO and REDO options in a word processor such as Microsoft Word. Which data structure would you use for each option and why?
-> Answer:
-- For the UNDO option I would use a FIFO data structure, so I would use Queue because the UNDO option is taking your most recent action and repeating it, so you want it to undo your first action.
-- For the REDO option I would use a LIFO data structure, using Stack because the REDO option takes your last action puts it in a queue to be called, which is always before the next queued item.
+> Answer (revised):
+- For the UNDO option I would use a Stack (LIFO) data structure because you want to UNDO the last (LI) action you took in a Word document and use it first (FO) in list of recent tasks. 
+- For the REDO option I would use a Queue (FIFO) data structure because you want to REDO the task that was most recently used (FI) in a Word document and use it first (FO).
 
 Programming Questions
 You may program the following question in any language of your choice. Before you begin coding, write out a plan as to how you will solve the question.
@@ -67,7 +67,8 @@ class Stack {
     return itemToReturn;            // return item
     }
   }
-  
+
+
 3. Fill in the methods for the following Queue class so that it will work as expected (FIFO).
 
 > Answer:
