@@ -27,4 +27,16 @@ So to me an undirected, a-cyclic, unweighted graph is just like a round-about ro
 
 6.  What kind of graph is a binary search tree?
 > Answer:
-A binary tree contains nodes that point to a left and right child, and a binary search tree puts an order to each of these node based on a quantifiable value. When searching along the tree, nodes on the right are more value than the ones on the right. 
+A binary tree contains nodes that point to a left and right child, and a binary search tree puts an order to each of these node based on a quantifiable value. When searching along the tree, nodes on the right are more value than the ones on the right.
+
+Programming Questions
+
+1. Given a Binary Search Tree and a value, write a function that checks to see whether the value exists within the tree.
+Example: The value 10 exists in the tree. The value 23 does not exist in the tree.
+
+> Answer: ***
+
+2. Given a Binary Search Tree and two nodes, n1 and n2, write a function that finds the distance between the two nodes.
+Example: The distance between the nodes 4 and 10 is 4. The distance between the nodes 8 and 10 is 1. The distance between the nodes 1 and 14 is 4.
+
+> Answer: ***

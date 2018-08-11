@@ -33,21 +33,48 @@ Hash tables group similar type of data, where as objects can hold varying types 
 > Answer: object - varying data
 
 6. Build a system that allows a sales associate to enter a customer's name, address, and phone number into the system and look up customers using their phone numbers. Store this information in a hash table.
-> Answer: **
+> Answer:
 
-function customerData(phoneNumber, customer){
-  CREATE hashCustomerData
-  STORE each entry(key) with customer into customerData
-  CHECK whether customerData contains phoneNumber
+// created table using object constructor
+function HashTable(){
+  this.size = 0;
+  this.customerData = {};
 }
-...
-function createNote(note, newspaper){
-  CREATE HashMapNote
-  CREATE HashMapNewspaper
-  STORE each word(key) with note into HashMapNote and associate with frequency (value)
-  STORE each word(key) within newspaper into HashMapNewspaper and associate with frequency (value)
-  CHECK whether HashMapNewspaper contains HashMapNote
+
+// Insert a key and a value into the hash table. Returns null if the key isn't already in the hash table; returns the previous value associate with the key if the key is already in the hash table.
+HashTable.prototype.put = function(name, address, phoneNumber){
+  if(this.customerData.hasOwnProperty(name)){
+    throw new Error(element + "Hash table cannot contain duplicates")
+  }
+   else {
+     this.customerData[name] = address + " " + phoneNumber;
+     this.size += 1;
+     return this.customerData;
+   }
 }
+
+// Takes in a key "Returns a Boolean value indicating whether or not value is in the Hashtable."
+HashTable.prototype.contains = function(key){
+  if(this.customerData.hasOwnProperty(key)){
+    return this.customerData
+  }
+  else {
+    return false;
+  }
+}
+
+// returns enumeration (all) of the values contain in the table
+HashTable.prototype.enumerate = function () {
+  for(var element in this){
+    console.log(element + " " + this.customerData[element])
+  }
+  return this.customerData;
+ }
+
+// Creates hashtable
+var customer = new HashTable();
+customer.put("Michelle","#123 Quebec Street, Vancouver", "604-123-4567");
+console.log(customer.contains("Michelle"));
 
 7. Build a system that allows a store owner to track their store's inventory using a hash table for storage.
 > Answer: **
