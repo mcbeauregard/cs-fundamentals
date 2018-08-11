@@ -36,27 +36,83 @@ Hash tables group similar type of data, where as objects can hold varying types 
 > Answer:
 
 // created table using object constructor
-function HashTable(){
+function customerDetails(){
   this.size = 0;
   this.customerData = {};
 }
 
+// Returns the object at the specified key if it exists, otherwise returns undefined.
+customerDetails.prototype.get = function(phoneNumber) {
+  return this.customerData[phoneNumber];
+}
+
 // Insert a key and a value into the hash table. Returns null if the key isn't already in the hash table; returns the previous value associate with the key if the key is already in the hash table.
-HashTable.prototype.put = function(name, address, phoneNumber){
-  if(this.customerData.hasOwnProperty(name)){
+customerDetails.prototype.put = function(name, address, phoneNumber){
+  if(this.customerData.hasOwnProperty(phoneNumber)){
     throw new Error(element + "Hash table cannot contain duplicates")
   }
    else {
-     this.customerData[name] = address + " " + phoneNumber;
+     this.customerData[phoneNumber] = name + ": " + address + " " + phoneNumber;
      this.size += 1;
      return this.customerData;
    }
 }
 
 // Takes in a key "Returns a Boolean value indicating whether or not value is in the Hashtable."
-HashTable.prototype.contains = function(key){
+customerDetails.prototype.contains = function(key){
   if(this.customerData.hasOwnProperty(key)){
-    return this.customerData
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+// returns enumeration (all) of the values contain in the table
+customerDetails.prototype.enumerate = function () {
+  for(var element in this){
+    console.log(element + " " + this.customerData[element])
+  }
+  return this.customerData;
+ }
+
+// Creates hashtable
+var customer = new customerDetails();
+customer.put("Michelle","#123 Quebec Street, Vancouver", "604-123-4567");
+customer.put("Joe","#124 Quebec Street, Vancouver", "604-123-4568");
+console.log(customer.get("604-123-4567"));
+
+
+7. Build a system that allows a store owner to track their store's inventory using a hash table for storage.
+> Answer:
+
+// created table using object constructor
+function HashTable(){
+  this.size = 0;
+  this.inventoryData = {};
+}
+
+// Returns the object at the specified key if it exists, otherwise returns undefined.
+HashTable.prototype.get = function(product) {
+  return this.inventoryData[product];
+}
+
+// Insert a key and a value into the hash table. Returns null if the key isn't already in the hash table; returns the previous value associate with the key if the key is already in the hash table.
+HashTable.prototype.put = function(product, inventory, type){
+  if(this.inventoryData.hasOwnProperty(product)){
+    throw new Error(element + "Hash table cannot contain duplicates")
+  }
+   else {
+     this.inventoryData[product] = product + ": " + inventory + ", " + type;
+     this.size += 1;
+     return this.inventoryData;
+   }
+}
+
+// Takes in a key "Returns a Boolean value indicating whether or not value is in the Hashtable."
+HashTable.prototype.contains = function(key){
+  if(this.inventoryData.hasOwnProperty(key)){
+    return true
   }
   else {
     return false;
@@ -66,18 +122,66 @@ HashTable.prototype.contains = function(key){
 // returns enumeration (all) of the values contain in the table
 HashTable.prototype.enumerate = function () {
   for(var element in this){
-    console.log(element + " " + this.customerData[element])
+    console.log(element + " " + this.inventoryData[element])
   }
-  return this.customerData;
+  return this.inventoryData;
  }
 
 // Creates hashtable
-var customer = new HashTable();
-customer.put("Michelle","#123 Quebec Street, Vancouver", "604-123-4567");
-console.log(customer.contains("Michelle"));
-
-7. Build a system that allows a store owner to track their store's inventory using a hash table for storage.
-> Answer: **
+var item = new HashTable();
+item.put("Diamond", 100, "Jewelery");
+item.put("Pearl",25, "Jewelery");
+item.put("Watches", 50, "Accessory");
+console.log(item.get("Watches"));
 
 8. Build a system that allows digital copies of newspapers to be entered and searched by publisher and publication date. Use hash tables to store the necessary data.
-> Answer: **
+> Answer:
+
+// created table using object constructor
+function HashTable(){
+  this.size = 0;
+  this.newspaperArchiveData = {};
+}
+
+// Returns the object at the specified key if it exists, otherwise returns undefined.
+HashTable.prototype.get = function(publisher, publicationDate) {
+  return this.newspaperArchiveData[publisher, publicationDate];
+}
+
+// Insert a key and a value into the hash table. Returns null if the key isn't already in the hash table; returns the previous value associate with the key if the key is already in the hash table.
+HashTable.prototype.put = function(publisher, publicationDate){
+  if(this.newspaperArchiveData.hasOwnProperty(publisher) && this.newspaperArchiveData.hasOwnProperty(publicationDate)){
+    throw new Error(element + "Hash table cannot contain duplicates")
+  }
+   else {
+     this.newspaperArchiveData[publisher] =  publisher + " " + publicationDate;
+     this.newspaperArchiveData[publicationDate] =  publisher + " " + publicationDate;
+     this.size += 1;
+     return this.newspaperArchiveData;
+   }
+}
+
+// Takes in a key "Returns a Boolean value indicating whether or not value is in the Hashtable."
+HashTable.prototype.contains = function(key){
+  if(this.newspaperArchiveData.hasOwnProperty(key)){
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+// returns enumeration (all) of the values contain in the table
+HashTable.prototype.enumerate = function () {
+  for(var element in this){
+    console.log(element + " " + this.newspaperArchiveData[element])
+  }
+  return this.newspaperArchiveData;
+ }
+
+// Creates hashtable
+var newspaper = new HashTable();
+newspaper.put("Fleming", "2018");
+newspaper.put("Fulton", "2017");
+newspaper.put("Allbritton", "2016");
+console.log(newspaper.get("Fleming", "2018"));
