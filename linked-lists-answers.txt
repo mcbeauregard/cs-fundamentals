@@ -24,7 +24,7 @@ Before beginning to code, write out a plan explaining how to solve the question.
 
 1. The Linked List push function should take a value, create a node, and add it to the end of a list. Below is a push function for a singly linked list. However, there is something wrong with it. Find the bug and fix the code.
 
-Answer:  *** review with mentor ***
+Answer:
 LinkedList.prototype.push = function(element) {
  SET node = {
    value: element,
@@ -48,72 +48,58 @@ LinkedList.prototype.push = function(element) {
   Input: a -> c -> d -> d -> a
   Output: a -> c -> d
 
-> Answer:  ***
+> Answer:
 
-'use strict';
-
-function LinkedList () {
-    this.head = null;
+function Node(data) {
+  this.data = data;
+  this.next = null; // by default each node will point to nothing
 }
 
-LinkedList.prototype.removeDuplicates = function () {
-    // Empty or a single element Linked List
-    if (!this.head || !this.head.next) {
-      console.log('No duplicates were found. Empty or a single element Linked List.');
-      return;
+// function to remove duplicates from an unsorted list
+function removeDuplicates(head) {
+  let current = head;  // pointer to traverse the linked list
+
+  while (current && current.next) {  // iterate over each node
+    if (current.data === current.next.data) { // Compares nodes: to see if the current value equal to the next value
+      current.next = current.next.next; // if value is a match, delete current node, by skipping to node to the next one after
     }
+    else current = current.next; // only advance if no deletion
+  }
 
-    var p1;
-    var p2;
-    var nodes = {};
+  return head; // Return to the head of the list
+}
 
-    p1 = this.head;
-    p2 = p1.next;
-    nodes[p1.data] = true;
-
-    while (p2) {
-        var data = p2.data;
-        if (nodes[data]) {
-            p1.next = p2.next;
-        } else {
-            nodes[data] = true;
-            p1 = p2;
-        }
-        p2 = p2.next;
-    }
-};
 
 3. Given an unsorted singly linked list, reverse it.
 Example
   Input: a -> b -> c -> d
   Output: d -> c -> b -> a
 
-> Answer: ***
+> Answer:
 
-'use strict';
+// 1 -> 2 -> 3 -> 4 -> 5   1 is head and ogHead, 2 is ogHead.next and head.next
+// 2 -> 1 -> 3 -> 4 -> 5   1 is ogHead and preHead, 3 is ogHead.next, 2 is head, 3 is head.next
+// 3 -> 2 -> 1 -> 4 -> 5
+// 4 -> 3 -> 2 -> 1 -> 5
+// 5 -> 4 -> 3 -> 2 -> 1
 
-function LinkedList () {
-    this.head = null;
-}
 
-LinkedList.prototype.reverseLinkedList = function () {
+var reverseList = function(head){
+  let ogHead = head; // Define number one as our head node.
 
-  // Empty or a single element Linked List
-  if (!this.head || !this.head.next) {
-    console.log('No duplicates were found. Empty or a single element Linked List.');
-    return;
+  if(!head){     // if null list, there would be no next to null and it would throw an error in code, so return head of list.
+    return head;
   }
 
-  var p1 = null;
-  var p2 = this.head;
-  var p3;
+  // we want #1 to traverse throughout the list without changing the value of #1, so we're changing whatever's next to it.
+  while(ogHead.next){ // traverses through our linked list. Since we are reversing the list, we always want to know what's the next node after the head node.
+    let prevHead = head; // Let head be what the true previous head was.
 
-  while (p2) {
-    p3 = p2.next;
-    p2.next = p1;
-    p1 = p2;
-    p2 = p3;
+    head = ogHead.next; // We want the head of the linkedlist to point to the number one (ogHead) next. Ie (2 -> 1) head is 2 and ogHead is 1
+    ogHead.next = head.next; // Next action in loop: We need want the next number after one to point to the head's next number. Ie (2 -> 1 -> 3) head is 2 and head.next is 3, so after ogHead (1) is ogHead.next which now points to head.next, which is 3.
+    head.next = prevHead; // We want the next node after head to be the previous head. So (2 -> 1) 2 is the new head. So head.next is 1, which was the previous head ie (1 -> 2). Another example is 3 -> 2, where 2 is the prevHead in the row above and now the head.next.
   }
 
-  this.head = p1;
-}
+  return head;
+
+};
