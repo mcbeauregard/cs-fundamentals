@@ -9,9 +9,21 @@ The main difference is how they arrange their data structures. Stack arranges da
  Both stacks and queues prioritize entries.
 
 3. Imagine you are an engineer tasked with implementing the UNDO and REDO options in a word processor such as Microsoft Word. Which data structure would you use for each option and why?
-> Answer (revised):
-- For the UNDO option I would use a Stack (LIFO) data structure because you want to UNDO the last (LI) action you took in a Word document and use it first (FO) in list of recent tasks. 
-- For the REDO option I would use a Queue (FIFO) data structure because you want to REDO the task that was most recently used (FI) in a Word document and use it first (FO).
+> Answer (revised Sept):
+
+UNDO action:
+To perform the undo action you have to first keep a list of your command objects in a stack. Next, you pop the first command in the stack, so basically you're taking the last command at end of the stack and using it first, so you would be using the data structure LIFO. This command is now removed from the UNDO stack and moved to the REDO stack by pushing it.
+Stack = LIFO
+
+REDO action:
+To perform the redo action you keep a second list of undo commands in a queue, basically it contains the most recent UNDO command (first in). The next step is to pop the first command, meaning it's first out, so you're using a FIFO data structure. Next you push the the command back to the undo stack.
+Queues = FIFO
+
+Illustration:
+              UNDO STACK       ACTION                              REDO STACK       ACTION
+COMMANDS:     Paste image      Pop & push command to REDO stack    Paste image      Pop & push command to UNDO stack
+              Paste image
+
 
 Programming Questions
 You may program the following question in any language of your choice. Before you begin coding, write out a plan as to how you will solve the question.
