@@ -6,7 +6,7 @@ What makes it unique is it's child nodes. If it happens to not have a child node
 2.  What is a heuristic?
 > Answer:
 
-A Heuristic is a guess that software engineers and there algorithm's make when face with a complex problem, for example calculating the shortest patch to travel to destination via Google maps.
+A Heuristic is a guess that software engineers and there algorithm's make when faced with a complex problem, for example calculating the shortest path to travel to a destination via Google maps.
 
 3.  What is another problem besides the shortest-path problem that requires the use of heuristics?
 > Answer:
@@ -18,16 +18,16 @@ A depth-first search, moves along a tree or graph data structure searching as fa
 
 5.  Explain in your own words what an undirected, a-cyclic, unweighted graph is.
 > Answer:
-To me it's like a free-for-all type of graph, and reminds of a round-about road and here's why:
-- A round-about road goes out in many directions, so it's undirected.
-- I've personally never seen a speed limit in a round-about, so there is no cost of time, so you would call that unweighted.
-- You typically exit a round-about before you've looped it, so to me it's acyclic.
+To me it's like a free-for-all type of graph, and reminds of an intersection and here's why:
+- An intersection has three exits you could potentially take (straight, left turn, or right turn), meaning it's undirected.
+- When you enter an intersection, you typically change your speed (slow down for oncoming traffic, or speed up so you don't hit a red list), so there is no cost of time and you could call that unweighted.
+- You can't do a u-turn in an intersection, so to me it's acyclic.
 
-So to me an undirected, a-cyclic, unweighted graph is just like a round-about road.
+So to me an undirected, a-cyclic, unweighted graph is just like a intersection.
 
 6.  What kind of graph is a binary search tree?
 > Answer:
-A binary tree contains nodes that point to a left and right child, and a binary search tree puts an order to each of these node based on a quantifiable value. When searching along the tree, nodes on the right are more value than the ones on the right.
+A binary tree contains nodes that point to a left and right child, and a binary search tree puts an order to each of these node based on a quantifiable value. When searching along the tree, nodes on the right have more value than the ones on the right.
 
 Programming Questions
 

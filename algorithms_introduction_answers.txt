@@ -1,0 +1,100 @@
+1. Using proper pseudo-code, describe the following primitive algorithms:
+
+> Answer:
+
+PROGRAM MakeACupofCoffee:
+    ADD cold water to coffee pot;
+    ADD water to coffee machine;
+    IF there is no filter,
+        ADD paper filter
+    ELSE
+        ADD coffee to filter;
+      TOUCH the power button to turn coffee machine on;
+      WHILE coffee is brewing Grab an empty mug from kitchen cabinet;
+        WAIT for coffee to finish brewing;
+      GRAB brewed coffee put and pour coffee into mug;
+      ADD cream;
+    ENDIF
+END
+
+Program washDishesByHand:
+preRinse
+    IF dish is has food scraps > 0
+        THEN throw food in garbage
+        RETURN dish to sink for rinsing
+      ELSE
+        RINSE dish with water, wipe dirt off with scrubber
+        ADD dish back to counter in a pile
+        RINSE dirt off in sink, throw out any food scraps
+    ENDIF
+
+loadWater
+    ADD warm water to sink and plug left sink drain hole
+    WHILE water is pouring
+      ADD soap into sink
+      IF water has filled halfway
+        TURN tap off
+      ELSE
+        LEAVE tap on
+      ENDIF
+    ENDWHILE
+
+washDishesByHand
+    IF dishes are preRinsed > 0
+      WASH dishes in groups:
+        WASH plates
+        WASH bowls
+        WASH cups
+        WASH cutlery
+        WASH pots and pans
+      ELSEIF dishes are washed
+        RINSE the soap in the right sink and place on drying rack
+      RETURN each dish to the cabinet;
+    ENDIF
+END
+
+Program growingAnAvocadoTree
+
+PrepareAvocadoSeed
+    IF you have an avocado at home
+        GRAB a knife, and cut open an avocado, preserving the seed
+        PEEL skin off seed
+        TAKE the seed and pierce it with 3 toothpicks around the seed, along it's equator; // Note: Avoid placing the toothpicks along the seed's grain lines.
+      ELSE
+        GO shopping
+    ENDIF
+
+prepareGlassCup
+    WHILE seed is ready
+        GRAB a clear glass and pour room temperature water into it
+        PLACE seed in the cup, with the root end face down (not the smooth side)
+        SUBMERGE the see halfway, using toothpicks holding it in the cup
+        PLACE the cup near a sunny window;
+    ENDWHILE
+
+maintainingAvocadoTree
+    IF water is low
+        ADD water once a week
+    ELSEIF algae is forming
+        DUMP water and replace with fresh water;
+    RETURN
+        AFTER 3 months the seed should start to sprout an avacado tree;
+    ENDIF
+END
+
+2. As with the knot algorithm, there may be more than one way to solve the problem. It is essential to try to pick the best algorithm for a situation. Name three companies who created an algorithm that made them successful, e.g., Google's search algorithm. It doesn't need to be a tech example (such as a recipe or manufacturing a product). Google's algorithm produces more relevant results than other search engines; what about each of your cases make them stand out?
+
+> Answer:
+A. INSTAGRAM DISCOVERY PAGE:
+Instagram's algorithm, I know it very well but it changes a lot. They are trying to promote videos right now, so anyone that posts feeds has a chance to be featured on their discovery page. Also if your photo has high engagement, such as likes and comments soon after you published it, you'll have a chance at getting placed on their discovery page.
+
+B. FACEBOOK PEOPLE SEARCH:
+Facebook updated their search alogrithm, making it easier to search for new friends or existing ones. For example, if you wanted to add an old friend from school, but you couldn't remember their last name, just search their first name and enter the school that they went with, and Facebook will show you relevant results. It will show you friends results that you have the most mutual connections with first.
+
+C. GOOGLE MAP:
+The other day I was driving, and I saw google map car with the 360 degree camera, so another example would be google maps algorithm. I could not live without it. You enter your destination, and it'll give you step by step directions on how to get there, and multiple ways to get there too - all thanks to it's algorithm.
+
+3. Hypothesize about what constitutes an efficient algorithm versus an inefficient algorithm.
+
+> Answer:
+There are many alogrithms to choose from when solving a problem. To choose the most efficient algorithm means you are selecting the one that uses less resources, processes fast, handles more scenarios, and gives you the right results in a reliable manner. An inefficient algorithm uses more resources, could take longer to process, and end in an error code, so it's best to always choose the most efficient alogrithm.

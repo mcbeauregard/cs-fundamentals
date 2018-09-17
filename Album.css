@@ -1,0 +1,107 @@
+/* When song is hovered, show play icon*/
+td:hover .ion-play {
+  display: block;
+}
+
+/* When song is hovered, don't show song number or pause icon, show play icon */
+td:hover .song-number,
+td:hover .ion-pause {
+  display: none;
+}
+
+/* When song-playing, show pause icon*/
+td.song-playing .ion-pause {
+  display: block;
+}
+
+/* When song-playing, don't show song-number or play icon */
+td.song-playing .song-number,
+td.song-playing .ion-play {
+  display: none;
+}
+
+/* Song should song-number only, before play-pause actions */
+td .ion-play,
+td .ion-pause {
+  display: none;
+}
+
+/* album body */
+
+body {
+  background-image: url(/assets/images/blurred_backgrounds/blur_bg_3.jpg);
+}
+
+/* album info */
+
+#album-info {
+  display: table;
+  margin-left: 150px;
+}
+
+#album-info img {
+  width: 180px;
+  display: block;
+  float: left;
+  padding: 50px 30px 50px 100px;
+}
+
+.album-details {
+  text-align: left;
+  float: right;
+  padding: 90px 50px 50px 0px;
+  letter-spacing: 1px;
+  line-height: 0.3em;
+}
+
+.album-details #album-title {
+  font-size: 1.8em;
+  display: block;
+}
+
+.album-details .artist {
+  font-size: 1rem;
+  display: block;
+  color: grey;
+}
+
+.album-details #release-info {
+  font-size: 1rem;
+  display: block;
+  color: grey;
+}
+
+/* Song list */
+
+#song-list {
+  width: 950px;
+  display: block;
+  margin: 0 0 75px 150px;
+  padding: 0 0 0 100px;
+  text-align: center;
+  opacity: 0.75;
+  line-height: 4.5em;
+}
+
+td.not-playing,
+td.song-playing{
+  display: inline-block;
+  text-align: center;
+  width: 75px;
+  border-bottom: 1px solid #ffff;
+}
+
+td.song-title {
+  display: inline-block;
+  text-align: left;
+  width: 685px;
+  border-bottom: 1px solid #ffff;
+  padding-left: 25px;
+}
+
+td.song-duration {
+  display: inline-block;
+  text-align: left;
+  width: 75px;
+  border-bottom: 1px solid #ffff;
+}
