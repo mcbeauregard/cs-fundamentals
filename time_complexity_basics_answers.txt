@@ -1,0 +1,60 @@
+1. What is time complexity and what is its relation to algorithms?
+
+> Answer:
+
+Time complexity is a function that calculates the amount of time that it takes to execute a program. This is calculated by measuring how quick the time is compared to the input in a program. Time is actually measured as a variable of n and n is the input, which is infinite. When the algorithm's grow rate increases (represented as f(n)), so does the time complexity's input size. And an alogrithm's time duration can be used synonymously with time complexity.
+
+2. What is runtime?
+
+> Answer:
+
+It's the physical/actual time in an algorithm, as mentioned about it's used synonymously with time complexity.
+
+3. How is the runtime of an algorithm calculated?
+
+> Answer:
+
+It's calculated by using the function O(n).
+
+4. Name the six types of algorithm growth rates we saw in this checkpoint and list them in order of most efficient to least efficient. Now Google another algorithmic growth rate not covered and place it in the correct spot in your list.
+
+> Answer:
+
+1. Constant growth rate: _
+2. Logarithmic growth rate: r
+3. Linear growth rate: /
+4. Log-Linear Growth Rate: ,/
+5. Quadratic growth rate: j
+6. Exponential growth rate: _/
+7. Factorial: O(n!)
+
+5. Choose one of the algorithmic growth rates from the last question and make a comparison to a real-life situation.
+
+> Answer:
+
+Linear growth rate example:
+A passenger walks on a ferry. The ferry route they selected is not direct; for each additional stop the ferry makes on an island (input), their travel time increases equally, since the ferry has to unload and reload passengers and cars at each stop.
+
+6. Determine the time complexity of the following snippet of code. It is commonly known as a linear search.
+
+> Answer:
+
+Linear growth as O(n)
+
+7. Determine the time complexity of the following snippet of code.
+
+> Answer:
+
+Quadratic growth as O(n^2)
+
+8. Determine the time complexity of the following snippet of code. It is commonly known as the Fibonacci sequence.
+
+> Answer:
+
+Exponential Growth Rate O(2^n)
+
+9. Out of the code snippets you just saw, which is the most time efficient?
+
+> Answer:
+
+#6 linear search
