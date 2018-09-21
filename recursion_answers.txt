@@ -1,0 +1,82 @@
+1. Define and compare recursion and iteration.
+
+> Answer:
+
+A recursive function calls itself again to repeat code, whereas an iterative function loops to repeat a part of a code. Both are recursion and iteration are used in algorithms in complex programs.
+
+Recursion is a way to solve problems by looking at the simplest case. Basically done by breaking the problem down to small subproblems, until the problem can then be solved. Iteration uses a simple for loop to display numbers 1 to 10. Either technique can be used but each has a down-side - recursions are slower and iterations are difficult to implement.
+
+2. Name five algorithms that are commonly implemented by recursion.
+
+> Answer:
+
+1. Binary search
+2. Merge sort
+3. Fibonacci sequence
+4. Factorial
+5. Breadth-first and depth-first tree/graph traversal
+
+3. When should you use recursion, and when should you avoid recursion? Give examples for each.
+
+> Answer:
+You should use recursion to solve a fibonacci problem, since it really looking for you to solve it's sub-problems first, before ultimately finding the solution. But this can creates inefficiencies, especially with large data which leads the risk to stack overflows, so avoid recursions when a problem has a large or infinite number and use iteration.
+
+An example of when you should use recursion is with treelike structures, so binary search trees, merge sort, etc. An example of when you should avoid recursion is with a runtime, such as an exponential growth rate.
+
+4. Compare the recursive and iterative solutions to the three algorithms from the checkpoint (factorial, maximum, and fibonacci). What is similar, and what is different?
+
+> Answer:
+I think I touched on this in the previous answers, they are different in that recursive solutions perform worse and are slower than iterative solutions. They are similar in that the fibonacci they both produce solutions. Based on what I've read in this checkpoint recursion looks more complicated than an iteration algorithm.
+
+5. Given a multi-dimensional collection (such as an array) where the number of dimensions is unknown, write a recursive algorithm to count the number of items in the entire collection.
+
+> Answer:
+
+function countArrayCollection(array){
+  var count = 0;
+  for(var i=0; i < array.length; i++){ 
+    if(typeof array[i] === "object"){
+      count += countArrayCollection(array[i]);
+    } else {
+      count++;  // // increment array item number by one
+    }
+  } return count;
+}
+
+countArrayCollection([1,2,[3,4,5],6,[7,8]]);
+
+
+function countArrayCollection(array) {
+var count = array.length // count string length
+console.log(count);
+if (array.length <= 0 ) { // if string is less than or equal to zero return
+  return 0;
+  }
+  return countArrayCollection;
+};
+
+countArrayCollection([1, 2, 3, 4,5,6]);
+
+6. A palindrome is a word or phrase whose spelling is the same either direction (e.g., racecar). Write a recursive algorithm to determine if a given word or phrase is a palindrome.
+
+> Answer:
+var stringLength = word.length; // store string length
+
+function isPalindrome(word) {     // holds word racecar
+  console.log(stringLength)       // prints string length
+  if (stringLength === 0 || stringLength === 1) { // if string length is zero or one return
+    return true;
+  }
+  if (word[0] === word[stringLength - 1]) {  // if 1st letter in string is = to the last, call palindrome
+    return isPalindrome(word.slice(1, word.length - 1));   // (string index 1, string length - 1)
+  }
+  return false;
+}
+
+isPalindrome('racecar')  // Will return true
+
+7. Google Easter Egg: Google the term "recursion". Google will prompt you with "Did you mean: recursion". Explain why this behavior exhibits properties of recursion.
+
+> Answer:
+
+LOL so it was placed there as a joke with Google. It exhibits recursion, because if you were to click the word each time, you would be creating an infinite loop of searches. And recursion of course is the function of using it's own values to generate an infinite sequence of values.
