@@ -1,0 +1,45 @@
+Short Answer
+1. What is a real-life scenario that uses linear search?
+
+> Answer:
+
+Say somebody lost their wallet at a wedding. You would want to return their wallet to them, but you don't anyone at the wedding so you have to ask everybody if this is their wallet, one by one until you find the owner. This is a linear search.
+
+2. What is a real-life scenario that uses binary search?
+
+> Answer:
+
+Looking for a library book reminds me of searching for a book in the library. You don't have to go through each book, to find the specific one you're looking for. You start looking for the book in a sorted list, because all the books are arranged alphabetically. In the library you take a look at the shelfs, looking up and down, if you're book is on the top shelf, you can eliminate the bottom and middle shelves from your search. You repeat this until you find the shelf that the book is on.
+
+3. Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using linear search?
+
+> Answer:
+
+Seven iterations.
+
+4. Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using binary search?
+
+> Answer:
+
+Three iterations.
+
+5. Given an unsorted collection of a million items, which algorithm would you choose between linear search and binary search? Explain your reasoning.
+
+> Answer:
+
+Linear search - it works on an unsorted collection, and binary doesn't. You would search through each item in a linear fashion until you find your item.
+
+6. Given a sorted collection of a million items, which algorithm would you choose between linear search and binary search? Explain your reasoning.
+
+> Answer:
+
+Binary search - it only looks at a sorted list but it can look through a sorted list faster than a linear search, since it compares data and discards it, so you wouldn't have to sort through every single item like you would in a linear search.
+
+Programming Assignment:
+1. You and a friend have set a wager to see who can find the word "Albatross" in the dictionary the fastest. Write a program to allow you to win the bet.
+
+> Answer:
+
+2. You work at a pet store, and a child has asked you to net the only white-spotted goldfish from the fish tank. Write a program that will help you net the right fish.
+
+> Answer:
