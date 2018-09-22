@@ -1,0 +1,71 @@
+1. Write pseudocode for bubble sort.
+
+> Answer:
+
+FUNCTION bubbleSort(collection)
+  REPEAT
+    SET swapped to false
+    FOR i = FIRST INDEX of collection to LAST INDEX of collection - 1
+      IF collection[i] > collection[i + 1] THEN
+        SET tmp to collection[i]
+        SET collection[i] to collection[i + 1]
+        SET collection[i + 1] to tmp
+        SET swapped to true
+      END IF
+    END FOR
+  UNTIL swapped is FALSE
+  RETURN collection
+END FUNCTION
+
+2. Write pseudocode for quicksort.
+
+> Answer:
+
+FUNCTION partition(left, right, pivot)
+   SET leftPointer = left
+   SET rightPointer = right - 1
+
+   WHILE True do
+      WHILE A[++leftPointer] < pivot do
+      END WHILE
+
+      WHILE rightPointer > 0 && A[--rightPointer] > pivot do
+      END WHILE
+
+      IF leftPointer >= rightPointer
+         break
+      ELSE
+         swap leftPointer,rightPointer
+      END IF
+   END WHILE
+
+   SWAP leftPointer, right
+   RETURN leftPointer
+END FUNCTION
+
+FUNCTION quickSort(left, right)
+   IF right-left <= 0
+      RETURN
+   ELSE
+      pivot = A[right]
+      partition = partitionFunc(left, right, pivot)
+      quickSort(left,partition-1)
+      quickSort(partition+1,right)
+   END IF
+END FUNCTION
+
+3. We talked about time complexity in a previous checkpoint, and how to get an idea of the efficiency of an algorithm. After looking at the pseudocode for the above sorting methods, identify why merge sort and quick sort are much more efficient than the others. Walking through each algorithm with a few sample collections may help.
+
+> Answer:
+
+The time complexity of merge sort and quick sort are very efficient, both can be accomplished fast in O(n log n) time by the following methods:
+  1. The idea with merge sort is to get a collection in two sorted lists, then merging them but creating a temporary array and passing it into a recursive function so it doesn't create more memory on each merge.
+  2. The idea with quick sort is that with each call the collection is broken up into two parts and items greater than the pivot point move right.
+
+But the problem is that both have a worst case time complexity, that is worst when compared to other algorithms such us a doubly-linked list with a time complexity of O(n). So your work is just as much as the start of the method.
+
+4. All of the sorts addressed in this checkpoint are known as comparison sorts. Research bucket sort and explain how it works. What is the ideal input for bucket sort?
+
+> Answer:
+
+Bucket sort has a time complexity of O(n+k) and is an algorithm that works to distribute element into an array into a number of buckets, those buckets are then sorted with a different sorting algorithm or recursively by applying a bucket sorting algorithm. It's ideal to use bucket sort when the inputs are uniformly distributed for example a uniform number range of 0.0 to 1.0.
