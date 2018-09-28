@@ -50,25 +50,24 @@ function searchDictionary(dictionary, word){
         high = dictionary.length - 1, // set high to be the last item in the collection
         mid = Math.floor((high + low)/2); // set mid to be the middle item in the collection
 
-    while(dictionary[mid] != word && low < high)
-    {
+    while(dictionary[mid] != word && low < high){
       // adjust search area
-        {
+       if (word < dictionary[mid]){ // if value at mid is greater than the value we're looking for, it's in the low section.
+
             high = mid - 1; // So ignore the upper half by updating high to mid minus one.
-        }
-      else if (word > dictionary[mid]) // if value at mid is less than the value we're looking for, it's in the high section.
-        {
+
+       } else if (word > dictionary[mid]){ // if value at mid is less than the value we're looking for, it's in the high section.
+
             low = mid + 1; // So ignore the lower half by updating low to mid plus one.
-        }
-        mid = Math.floor((high + low)/2);  // recalculate mid and get the precise middle of the search.
+
+       } mid = Math.floor((high + low)/2);  // recalculate mid and get the precise middle of the search.
     }
 
  return (dictionary[mid] !== word) ? -1 : mid; // make sure it's the right value
 }
 
 var dictionary = ['Ace', 'Albatross', 'Bat', 'Chesse', 'Deer', 'Eagle', 'Ferry', 'Island'];
-console.log(searchDictionary(dictionary, 'Albatross'));
-
+console.log(searchDictionary(dictionary, 'Albatross')); 
 
 2. You work at a pet store, and a child has asked you to net the only white-spotted goldfish from the fish tank. Write a program that will help you net the right fish.
 
