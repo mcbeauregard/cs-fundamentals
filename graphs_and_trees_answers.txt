@@ -34,9 +34,198 @@ Programming Questions
 1. Given a Binary Search Tree and a value, write a function that checks to see whether the value exists within the tree.
 Example: The value 10 exists in the tree. The value 23 does not exist in the tree.
 
-> Answer: ***
+> Answer:
+
+function Node(value){  // value of node
+   this.value = value;
+   this.left = null;
+   this.right = null;
+}
+
+function BST(){
+  this.root = null;
+}
+
+BST.prototype.contains = function(value) {
+    //There must be a node in the tree in order to traverse it. (found must be true on current node)
+    var node = this.root;
+    var traverse = function(node) {
+        if (!node) return false;
+
+        //values are equal, return true!
+        if (value === node.value) {
+            return true;
+
+        //if value is greater than the current node's, go right
+        } else if (value > node.value) {
+            return traverse(node.right);
+
+        //if value is less than the current node's, go left
+        } else if (value < node.value) {
+            return traverse(node.left);
+        }
+    };
+    return traverse(node);
+};
 
 2. Given a Binary Search Tree and two nodes, n1 and n2, write a function that finds the distance between the two nodes.
 Example: The distance between the nodes 4 and 10 is 4. The distance between the nodes 8 and 10 is 1. The distance between the nodes 1 and 14 is 4.
 
-> Answer: ***
+> Answer:
+
+Approach:
+ - Find the lowest ancestor between two nodes
+ - Find the distance between each node to the ancestor node (i.e. NodeP to A and NodeQ to A )
+ - Sum 2 distances is the total distance between NodeP and NodeQ
+
+ function Node(data) {
+   this.data = data;
+   this.left = null;
+   this.right = null;
+ }
+
+ function BinarySearchTree() {
+   this.root = null;  // root of binary search tree
+ }
+
+ BinarySearchTree.prototype.add = function(data) {
+   var node = new Node(data);
+   if(!this.root) {
+     this.root = node;
+   } else {
+     var current = this.root;
+     while(current) {
+       if(node.data < current.data) {
+         if(!current.left) {
+           current.left = node;
+           break;
+         }
+         current = current.left;
+       } else if (node.data > current.data) {
+         if(!current.right) {
+           current.right = node;
+           break;
+         }
+         current = current.right;
+       } else {
+         break;
+       }
+     }
+   }
+ };
+
+ BinarySearchTree.prototype.print = function() {
+   if(!this.root) {
+     return console.log('No root node found');
+   }
+   var newline = new Node('|');
+   var queue = [this.root, newline];
+   var string = '';
+   while(queue.length) {
+     var node = queue.shift();
+     string += node.data.toString() + ' ';
+     if(node === newline && queue.length) {
+       queue.push(newline);
+     }
+     if(node.left) {
+       queue.push(node.left);
+     }
+     if(node.right) {
+       queue.push(node.right);
+     }
+   }
+   console.log(string.slice(0, -2).trim());
+ };
+
+ BinarySearchTree.prototype.printByLevel = function() {
+   if(!this.root) {
+     return console.log('No root node found');
+   }
+   var newline = new Node('\n');
+   var queue = [this.root, newline];
+   var string = '';
+   while(queue.length) {
+     var node = queue.shift();
+     string += node.data.toString() + (node.data !== '\n' ? ' ' : '');
+     if(node === newline && queue.length) {
+       queue.push(newline);
+     }
+     if(node.left) {
+       queue.push(node.left);
+     }
+     if(node.right) {
+       queue.push(node.right);
+     }
+   }
+   console.log(string.trim());
+ };
+
+ // Find the distance between two nodes
+ BinarySearchTree.prototype.findPath = function(root, node1, node2) {
+     var ancestorNode = this.lowestCommonAncestor(root, node1, node2); // root has n1 & n2
+     var pathFromAncestor = this.countPath(root, ancestorNode);
+     var path1 = this.countPath(ancestorNode, node1);
+     var path2 = this.countPath(ancestorNode, node2);
+
+     return path1 + path2 - 2 * pathFromAncestor; //
+   }
+
+ // Traverse tree from bottom up to find the lowest common ancestor of the two nodes
+ BinarySearchTree.prototype.lowestCommonAncestor = function(root, node1, node2) {
+     var ancestorNode = root.data;
+     if (node1 < root.data && node2 < root.data ) { // If both n1 and n2 are smaller than root, then LCA lies in left
+         return this.lowestCommonAncestor(root.left, node1, node2);
+     }
+     else if (node1 > root.data && node2 > root.data) { // If both n1 and n2 are greater than root, then LCA lies in right
+         return this.lowestCommonAncestor(root.right, node1, node2);
+     }
+     else {
+         return ancestorNode; // returns lca node value
+     }
+ }
+
+ // Traverse tree, find the path of each element. (Distance between nodes is the min. # of edges to reach one node from another)
+ BinarySearchTree.prototype.countPath = function(root, data) {
+     let current = this.root;
+     let count = 0;
+
+     while (current) {
+
+       // if target is equal to current node, count
+       if (data === current.data) {
+         return count;
+       }
+
+       // else if, target is less than current node, go left, if not go right. Count path.
+       current = data < current.data ? current.left : current.right;
+       ++count;
+     }
+   }
+
+
+ var theBSTree = new BinarySearchTree();
+ theBSTree.add(6);
+ theBSTree.add(2);
+ theBSTree.add(8);
+ theBSTree.add(0);
+ theBSTree.add(4);
+ theBSTree.add(7);
+ theBSTree.add(9);
+ theBSTree.add(null);
+ theBSTree.add(null);
+ theBSTree.add(3);
+ theBSTree.add(5);
+ theBSTree.print(); // => 6 | 2 8 | 0 4 7 9 | 3 5
+ theBSTree.printByLevel(); // => 6 \n 2 8 \n 0 4 7 9 \ 3 5
+
+ var root = theBSTree.root
+ console.log(theBSTree.findPath(root, 0, 9)); // expected output is 4
+
+ // binary search tree should look like so:
+ //       ___6_____
+ //      /         \
+ //   ___2__     ___8__
+ //  /      \   /      \
+ // 0      _4   7       9
+ //       /  \
+ //       3   5
